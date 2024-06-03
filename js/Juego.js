@@ -7,7 +7,7 @@ import {
     kobold
 } from './clasesDeMostruos.js'
 
-class juego {
+export class juego {
     constructor(myHeroe) {
         this.historial = [];
         this.monstruoEnRadar = null;
