@@ -9,7 +9,7 @@ import {
 import {juego} from './juego.js'
 
 // Crear una instancia del heroe
-const myHerue = new heroe(Deigo, 150, 150, 35);
+const myHerue = new heroe('Deigo', 150, 150, 35);
 
 // Crear una instancia del juego
 const Juego = new juego(myHerue);
