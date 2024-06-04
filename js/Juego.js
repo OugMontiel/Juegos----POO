@@ -1,6 +1,6 @@
-import {criaturas} from './criaturas.js'
-import {heroe} from './heroe.js'
-import {mostruo} from './mostruo.js'
+import { criaturas } from './criaturas.js'
+import { heroe } from './heroe.js'
+import { mostruo } from './mostruo.js'
 import {
     orco,
     goblin,
@@ -12,8 +12,15 @@ export class juego {
         this.historial = [];
         this.monstruoEnRadar = null;
         this.heroe = myHeroe
+        this.combate = new combate(this); // Instancia de la clase Combate
     }
 
+}
+
+class combate {
+    constructor(juego) {
+        this.juego = juego // Referencia a la instancia de la clase Juego
+    }
     loguear(mensaje) {
         this.historial.push(mensaje);
         console.log(mensaje);
@@ -31,7 +38,6 @@ export class juego {
 
         this.loguear(`Has encontrado un ${this.monstruoEnRadar.nombre}!`);
     }
-
     atacar() {
         if (!this.monstruoEnRadar) {
             this.loguear('No hay monstruo para atacar.');
@@ -50,4 +56,5 @@ export class juego {
             this.loguear(`¡Has derrotado al ${this.monstruoEnRadar.nombre}!`);
         }
     }
+
 }
